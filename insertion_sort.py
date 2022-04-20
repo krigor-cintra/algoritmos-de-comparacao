@@ -10,5 +10,3 @@ def insertion_sort(list):
             j=j+1
 
     return list
-
-l3 = [5,2, 4,14,6,7,28,40,30]

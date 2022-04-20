@@ -1,6 +1,3 @@
-#bubble sort
-from listas import l2
-
 
 def bubble_sort(lista):
     tamanho=len(lista)
@@ -17,7 +14,3 @@ def bubble_sort(lista):
             auxiliar=lista[i]
             lista[i]=lista[a]
             lista[a]=auxiliar
-
-
-
-

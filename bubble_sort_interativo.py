@@ -12,8 +12,3 @@ def bubble_sorts(lista,i):
         return bubble_sorts(lista, a)
     else:
         return bubble_sorts(lista,a)
-
-
-
-
-
