@@ -16,8 +16,10 @@ menu_inicial.geometry("800x500")
 
 def mostrar():
     listaint = lista.get(1.0,END)
+
     print(lista.get(1.0, END))
-    print(str_int(listaint))
+    msg=(str_int(listaint))
+    messagebox.showinfo(title="Lista Desordenada", message=msg)
 
 
 Label(menu_inicial, text="Digite a lista:", background="#ff0", foreground="#009", anchor=W, font="Arial 20", ).place(
