@@ -41,22 +41,22 @@ def show():
     msg = (str_int(listaint))
     if a == 1:
         rest = bubble_sort((msg))
-        messagebox.showinfo(title="Bubble Sort",message=rest)
+        messagebox.showinfo(title="Bubble Sort",message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 2:
         rest = quick_sort(msg)
-        messagebox.showinfo(title="Quick Sort", message=rest)
+        messagebox.showinfo(title="Quick Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 3:
         rest = mergeSort(msg)
-        messagebox.showinfo(title="Merge Sort", message=rest)
+        messagebox.showinfo(title="Merge Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 4:
         rest = insertion_sort(msg)
-        messagebox.showinfo(title="Insertion Sort", message=rest)
+        messagebox.showinfo(title="Insertion Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 5:
         rest = selection_sort(msg)
-        messagebox.showinfo(title="Selection Sort", message=rest)
+        messagebox.showinfo(title="Selection Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 6:
         rest = shell_sort(msg)
-        messagebox.showinfo(title="Shell Sort", message=rest)
+        messagebox.showinfo(title="Shell Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
 
 #Checkbutton 1 - 6
 var = IntVar()

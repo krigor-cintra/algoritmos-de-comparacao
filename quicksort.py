@@ -9,8 +9,10 @@ def partition(lista, low, high):
   (lista[i + 1], lista[high]) = (lista[high], lista[i + 1])
   return i + 1
 
-
+from time import time
+import time
 def quick_sort_ajudante(lista, low, high):
+
   if low < high:
 
     pi = partition(lista, low, high)
@@ -20,7 +22,12 @@ def quick_sort_ajudante(lista, low, high):
 
 
 def quick_sort(lista):
+  timei = time.time()
+  time.sleep(0.0000000000001)
   quick_sort_ajudante(lista, 0, len(lista) - 1)
-  return lista
+  timef = time.time()
+  timeend = timef - timei
+
+  return lista, timeend
 
 

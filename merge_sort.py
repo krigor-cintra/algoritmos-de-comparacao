@@ -1,5 +1,9 @@
+from time import time
+import time
 
 def mergeSort(array):
+    timei = time.time()
+    time.sleep(0.0000000000001)
     if len(array) > 1:
 
         #  r is the point where the array is divided into two subarrays
@@ -35,4 +39,6 @@ def mergeSort(array):
             array[k] = M[j]
             j += 1
             k += 1
-    return  array
+    timef = time.time()
+    timeend = timef - timei
+    return  array,timeend
