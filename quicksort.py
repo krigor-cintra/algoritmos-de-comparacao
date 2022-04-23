@@ -21,4 +21,6 @@ def quick_sort_ajudante(lista, low, high):
 
 def quick_sort(lista):
   quick_sort_ajudante(lista, 0, len(lista) - 1)
+  return lista
+
 

@@ -14,3 +14,4 @@ def bubble_sort(lista):
             auxiliar=lista[i]
             lista[i]=lista[a]
             lista[a]=auxiliar
+    return lista

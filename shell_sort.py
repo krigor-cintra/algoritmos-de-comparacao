@@ -1,13 +1,17 @@
-def shell_sort_ajudante(array, n):
-    interval = n // 2
-    while interval > 0:
-        for i in range(interval, n):
-            temp = array[i]
+def shell_sort_ajudante(lista, n):
+    intervalo = n // 2
+    while intervalo > 0:
+        for i in range(intervalo, n):
+            temp = lista[i]
             j = i
-            while j >= interval and array[j - interval] > temp:
-                array[j] = array[j - interval]
-                j -= interval
+            while j >= intervalo and lista[j - intervalo] > temp:
+                lista[j] = lista[j - intervalo]
+                j -= intervalo
 
-            array[j] = temp
-        interval //= 2
+            lista[j] = temp
+        intervalo //= 2
+def shell_sort(lista):
+    n1=len(lista)
+    shell_sort_ajudante(lista,n1)
+    return lista
 

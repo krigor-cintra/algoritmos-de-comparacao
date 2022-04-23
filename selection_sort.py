@@ -1,4 +1,4 @@
-def selection_sort(lista):
+def selection_sort(list):
     tamanho = len(list)
     auxiliar: int
     for i in range(tamanho):

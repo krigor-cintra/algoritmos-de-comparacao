@@ -1,5 +1,3 @@
-# MergeSort in Python
-
 
 def mergeSort(array):
     if len(array) > 1:
@@ -37,3 +35,4 @@ def mergeSort(array):
             array[k] = M[j]
             j += 1
             k += 1
+    return  array

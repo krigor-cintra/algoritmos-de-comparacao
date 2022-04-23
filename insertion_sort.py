@@ -1,12 +1,11 @@
 def insertion_sort(list):
-    tamanho=len(list)
-    auxiliar: int
-    j=1
-    for i in range(tamanho):
-        if (list[i]<list[j]):
-            auxiliar = list[i]
-            list[i]= list[j]
-            list[j] = auxiliar
-            j=j+1
+
+    for step in range(1, len(list)):
+        key = list[step]
+        j = step - 1
+        while j >= 0 and key < list[j]:
+            list[j + 1] = list[j]
+            j = j - 1
+        list[j + 1] = key
 
     return list
