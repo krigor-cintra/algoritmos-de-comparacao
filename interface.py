@@ -1,4 +1,5 @@
 from tkinter import *
+import tkinter as tk
 from conversao import *
 from bubble_sort import *
 from quicksort import *
@@ -6,9 +7,6 @@ from merge_sort import *
 from insertion_sort import *
 from selection_sort import *
 from shell_sort import *
-import tkinter as tk
-
-# criando a janela
 from tkinter import messagebox
 
 menu_inicial = Tk()
@@ -17,7 +15,14 @@ menu_inicial.title("Algoritimo De Comparações - Chrigor Silva")
 # usando png como logo
 menu_inicial.call('wm', 'iconphoto', menu_inicial._w, PhotoImage(file='imagens/logo_estacio.png'))
 # tamanho da tela aberta
-menu_inicial.geometry("800x500")
+menu_inicial.geometry("900x600")
+menu_inicial.wm_attributes("-transparentcolor","#ab23ff")
+#
+'''ima = tk.PhotoImage(file='imagens/py_logo.png')
+ima=ima.subsample(1,1)
+labelima=tk.Label(image=ima)
+labelima.place(x=0,y=0,relwidth=1.0,relheight=1.0)'''
+
 
 
 def mostrar():
@@ -27,12 +32,12 @@ def mostrar():
     messagebox.showinfo(title="Lista Desordenada", message=msg)
 
 
-Label(menu_inicial, text="Digite a lista:", background="#ff0", foreground="#009", anchor=W, font="Arial 20", ).place(
-    x=20, y=20, width=160, height=35)
+Label(menu_inicial, text="Digite a lista:", foreground="#009", anchor=W, font="Arial 20" ).place(x=20, y=20, width=160, height=35)
 lista = Text(menu_inicial)
 lista.place(x=20, y=60, width=700, height=30)
 Button(menu_inicial, text="Mostrar Lista", command=mostrar).place(x=210, y=20, width=160, height=35)
-
+Label(menu_inicial, text="Obs.: Digitar somente números, positivos ou negativos, separando com espaço. Obrigado!", foreground="#009", anchor=W, font="Arial 10", ).place(
+    x=20, y=100, width=540, height=35)
 
 # Ver lista digitada pelo ususario
 def show():
@@ -41,22 +46,22 @@ def show():
     msg = (str_int(listaint))
     if a == 1:
         rest = bubble_sort((msg))
-        messagebox.showinfo(title="Bubble Sort",message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
+        messagebox.showinfo(title="Bubble Sort",message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 2:
         rest = quick_sort(msg)
-        messagebox.showinfo(title="Quick Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
+        messagebox.showinfo(title="Quick Sort", message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 3:
         rest = mergeSort(msg)
-        messagebox.showinfo(title="Merge Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
+        messagebox.showinfo(title="Merge Sort", message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 4:
         rest = insertion_sort(msg)
-        messagebox.showinfo(title="Insertion Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
+        messagebox.showinfo(title="Insertion Sort", message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 5:
         rest = selection_sort(msg)
-        messagebox.showinfo(title="Selection Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
+        messagebox.showinfo(title="Selection Sort", message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
     elif a == 6:
         rest = shell_sort(msg)
-        messagebox.showinfo(title="Shell Sort", message=f"\n{rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
+        messagebox.showinfo(title="Shell Sort", message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
 
 #Checkbutton 1 - 6
 var = IntVar()
@@ -74,29 +79,54 @@ select.place(x=120, y=175, width=100, height=35)
 shell = Checkbutton(menu_inicial, text="Shell Sort", variable=var, onvalue="6", offvalue="0")
 shell.place(x=120, y=210, width=100, height=35)
 
+#função de limpar all
+def clearInput():
+    lista.delete("1.0","end")
+    insert.deselect()
 
 #Teste futuro
-'''def janela():
+def janela():
     janelas = Toplevel()
-    janelas.title("Retunr")
+    janelas.title("Comparação Geral")
+    menu_inicial.call('wm', 'iconphoto', janelas._w, PhotoImage(file='imagens/logo_estacio.png'))
     janelas.configure()
-    janelas.geometry("400x200")
+    janelas.geometry("300x250")
     janelas.resizable(False, False)
     janelas.transient(menu_inicial)
     janelas.focus_force()
     janelas.grab_set()
-    print(var.get())
-    resultado = Label(janelas, text=var.get())'''
+    listaint = lista.get(1.0, END)
+    msg = (str_int(listaint))
+    if len(msg) ==0:
+        final = "ERRO"
+        messagebox.showinfo(title="Erro", message=f"Lista vazia, favor digitar uma lista")
+
+    elif len(msg) >0:
+        bubble = bubble_sort((msg))
+        quick = quick_sort(msg)
+        merge = mergeSort(msg)
+        insertion = insertion_sort(msg)
+        selection = selection_sort(msg)
+        shell = shell_sort(msg)
+
+        final=f"\n Bubble Sort\n Tempo de execução: {bubble[1]:.4f} segundos" \
+              f"\n Quick Sort\n Tempo de execução: {quick[1]:.4f} segundos" \
+              f"\n Merge Sort\n Tempo de execução: {merge[1]:.4f} segundos"\
+              f"\n Insertion Sort\n Tempo de execução: {insertion[1]:.4f} segundos" \
+              f"\n Selection Sort\n Tempo de execução: {selection[1]:.4f} segundos"\
+              f"\n Shell Sort\n Tempo de execução: {shell[1]:.4f} segundos"
+
+    Label(janelas, text=final, foreground="#009", anchor=NW, font="Arial 10").place(x=0, y=0, width=350, height=300)
 
 
 # botoes finais
-mybutton = Button(menu_inicial, text="resultado", command=show).place(x=30, y=280, width=160, height=35)
+mybutton = Button(menu_inicial, text="Resultado", command=show).place(x=30, y=280, width=160, height=35)
 
-end = Button(menu_inicial, text="Quit", command=menu_inicial.destroy).place(x=300, y=280, width=160, height=35)
+end = Button(menu_inicial, text="Sair", command=menu_inicial.destroy).place(x=370, y=280, width=160, height=35)
 
-# botão de saida
-# ttk.Button(menu_inicial, text="Quit", command=menu_inicial.destroy).grid(column=1, row=0)
+clear = Button(menu_inicial, text="Limpar", command=clearInput).place(x=200, y=280, width=160, height=35)
 
+comparacao = Button(menu_inicial, text="Comparação geral", command=janela).place(x=540, y=280, width=160, height=35)
 
 # chamando a tela inicial
 menu_inicial.mainloop()
