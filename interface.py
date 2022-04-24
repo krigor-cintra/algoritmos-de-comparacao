@@ -18,10 +18,10 @@ menu_inicial.call('wm', 'iconphoto', menu_inicial._w, PhotoImage(file='imagens/l
 menu_inicial.geometry("900x600")
 
 #
-'''ima = tk.PhotoImage(file='imagens/py_logo.png')
+ima = tk.PhotoImage(file='imagens/py_logo.png')
 ima=ima.subsample(1,1)
 labelima=tk.Label(image=ima)
-labelima.place(x=0,y=0,relwidth=1.0,relheight=1.0)'''
+labelima.place(x=0,y=0,relwidth=1.0,relheight=1.0)
 
 
 
