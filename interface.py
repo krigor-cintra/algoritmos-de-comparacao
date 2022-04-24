@@ -16,7 +16,7 @@ menu_inicial.title("Algoritimo De Comparações - Chrigor Silva")
 menu_inicial.call('wm', 'iconphoto', menu_inicial._w, PhotoImage(file='imagens/logo_estacio.png'))
 # tamanho da tela aberta
 menu_inicial.geometry("900x600")
-menu_inicial.wm_attributes("-transparentcolor","#ab23ff")
+
 #
 '''ima = tk.PhotoImage(file='imagens/py_logo.png')
 ima=ima.subsample(1,1)
