@@ -8,7 +8,7 @@ from insertion_sort import *
 from selection_sort import *
 from shell_sort import *
 from tkinter import messagebox
-
+#Iniciando janela
 menu_inicial = Tk()
 # titulo da janela
 menu_inicial.title("Algoritimo De Comparações - Chrigor Silva")
@@ -17,14 +17,14 @@ menu_inicial.call('wm', 'iconphoto', menu_inicial._w, PhotoImage(file='imagens/l
 # tamanho da tela aberta
 menu_inicial.geometry("900x600")
 
-#
+#Imagem de fundo
 ima = tk.PhotoImage(file='imagens/py_logo.png')
 ima=ima.subsample(1,1)
 labelima=tk.Label(image=ima)
 labelima.place(x=0,y=0,relwidth=1.0,relheight=1.0)
 
 
-
+#função para mostrar variavel 
 def mostrar():
     listaint = lista.get(1.0,END)
 
