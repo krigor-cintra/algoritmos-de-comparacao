@@ -24,7 +24,7 @@ labelima=tk.Label(image=ima)
 labelima.place(x=0,y=0,relwidth=1.0,relheight=1.0)
 
 
-#função para mostrar variavel 
+#função para mostrar variavel
 def mostrar():
     listaint = lista.get(1.0,END)
 
@@ -63,9 +63,9 @@ def show():
         rest = shell_sort(msg)
         messagebox.showinfo(title="Shell Sort", message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
 
-#Checkbutton 1 - 6
+#Recebe os valores para conseguir analisar o que tem que ser feito no codigo 
 var = IntVar()
-
+#Checkbutton 1 - 6
 bubble = Checkbutton(menu_inicial, text="Bubble Sort", variable=var, onvalue="1", offvalue="0")
 bubble.place(x=20, y=145, width=100, height=35)
 quiclk = Checkbutton(menu_inicial, text="Quick Sort", variable=var, onvalue="2", offvalue="0")
