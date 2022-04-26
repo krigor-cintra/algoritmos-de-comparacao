@@ -63,7 +63,7 @@ def show():
         rest = shell_sort(msg)
         messagebox.showinfo(title="Shell Sort", message=f"\n {rest[0]}\n Tempo de execução: {rest[1]:.4f} segundos")
 
-#Recebe os valores para conseguir analisar o que tem que ser feito no codigo 
+#Recebe os valores para conseguir analisar o que tem que ser feito no codigo
 var = IntVar()
 #Checkbutton 1 - 6
 bubble = Checkbutton(menu_inicial, text="Bubble Sort", variable=var, onvalue="1", offvalue="0")
@@ -125,7 +125,7 @@ mybutton = Button(menu_inicial, text="Resultado", command=show).place(x=30, y=28
 end = Button(menu_inicial, text="Sair", command=menu_inicial.destroy).place(x=370, y=280, width=160, height=35)
 
 clear = Button(menu_inicial, text="Limpar", command=clearInput).place(x=200, y=280, width=160, height=35)
-
+# o botão entrega a compração de todos os resultado em uma nova janela que se abre com os valores
 comparacao = Button(menu_inicial, text="Comparação geral", command=janela).place(x=540, y=280, width=160, height=35)
 
 # chamando a tela inicial
